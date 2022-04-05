@@ -25,19 +25,16 @@ Be careful of committing this secret into the repository. The `.gitignore`-file 
 The secret is setup for internal use only. And users need to authenticate to actually use our API access. So nothing much. We could get flooded with login attempts, which could incur a charge. It is just better to be safe.
 
 ## Activate Venv, Download Python dependencies
-Use the following commands to setup your virtual python environment:
-```sh
-python3 -m venv .venv
-```
+If you are on Windows you can use the `install.ps1` script to prepare your environment for a run.
 
-| On Linux do:             | In Windows PowerShell do:      |
-|--------------------------|--------------------------------|
-| `. ./.venv/bin/activate` | `.\.venv\Scripts\Activate.ps1` |
+`.\install.ps1`
 
-Finish with:
-```sh
-python3 -m pip install -r requirements.txt
-```
+Otherwise following these commands to setup your virtual python environment:
+| On Linux do:                               | In Windows PowerShell do:                 |
+|--------------------------------------------|-------------------------------------------|
+| python3 -m venv .venv                      | python -m venv .venv                      |
+| `. ./.venv/bin/activate`                   | `.\.venv\Scripts\Activate.ps1`            |
+| python3 -m pip install -r requirements.txt | python -m pip install -r requirements.txt |
 
 # Execution
 To run the script use the following command:
@@ -52,4 +49,4 @@ python3 mailer.py [INPUT_CSV_PATH] [LXD_HOST_IP] [SECRET_JSON_PATH]
 This script will open a browser window which allows you to authenticate with your Google account. Make certain you use a TechGrounds account as non other will work.
 
 ## The script interrupted?
-This script has no mechanism to resume after a failed run. You can 'resume' the script by removing the entries from the input file that has been send correctly before the script failed.
+This script has no mechanism to resume after a failed run. You can 'resume' the script by removing the entries from the input file that were send correctly before the script failed.
