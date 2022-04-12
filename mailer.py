@@ -1,5 +1,5 @@
 
-import argparse, base64
+import argparse, base64, time
 from csv import DictReader
 from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
@@ -67,6 +67,8 @@ def main(args):
     except HttpError as err:
         print(err)
 
+    input("Authentication complete. Press enter to start sending the emails...")
+
     ### Main loop
     for row in reader:
         ### Preperations inside loop
@@ -100,6 +102,9 @@ def main(args):
             print("Message Id: {} to: {}".format(mail['id'], row[_email_cname]))
         except HttpError as error:
             print('An error occurred: {}'.format(error))
+            exit(1) # Hard exit to prevent mixed results
+        # Backoff for a second to prevent API overloading
+        time.sleep(1)
 
 if __name__ == '__main__':
     main(parser.parse_args())
