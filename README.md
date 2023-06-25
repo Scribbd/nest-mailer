@@ -42,7 +42,7 @@ To run the script use the following command:
 python3 mailer.py [INPUT_CSV_PATH] [LXD_HOST_IP] [SECRET_JSON_PATH]
 ```
 
-- INPUT_SCV_PATH: Path to the CSV-file that [Linux-Nester](https://github.com/techgrounds/linux-nester) generated
+- INPUT_SCV_PATH: Path to the CSV-file that [Linux-Nester](https://github.com/scribbd/linux-nester) generated
 - LXD_HOST_IP: The public IP address of your LXD Host
 - SECRET_JSON_PATH: [Instructions](#Get-your-secret)
 
