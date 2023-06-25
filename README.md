@@ -17,7 +17,7 @@ Clone this repository with:
 - Note down the public IP of your LXD instance.
 
 ## Get your secret
-For security reasons the client_secret-json isn't included with the GitHub repository. To get the secret head over to the google cloud console with your TechGrounds account. The console can be found [here](https://console.cloud.google.com/apis/credentials?hl=nl&project=default-333121). Download the `Py-Nest-Mailer` keys and place it in the `secrets`-folder.
+For security reasons the client_secret-json isn't included with the GitHub repository. To get the secret head over to the google cloud console with your Google Cloud account. Create a project and create a mail secret.
 
 Be careful of committing this secret into the repository. The `.gitignore`-file does have ignore rules, delete the credentials afterward sending out your mail.
 
